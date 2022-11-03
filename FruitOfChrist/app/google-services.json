@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "195986792612",
+    "project_id": "attendance-system-ffb93",
+    "storage_bucket": "attendance-system-ffb93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195986792612:android:110be82fde52d273e4c631",
+        "android_client_info": {
+          "package_name": "com.kingelias.fruitofchrist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195986792612-n0nvujtorsubocvo5vli45qjnfqqe912.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kingelias.fruitofchrist",
+            "certificate_hash": "2e4b04e6f3e691ab81c2f665d0444daef76184ad"
+          }
+        },
+        {
+          "client_id": "195986792612-6kj1o81icbqcj6626de81vob8rvqmrdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB70JzD13omJqzqBtd-k0xFdV-Du3eutpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195986792612-6kj1o81icbqcj6626de81vob8rvqmrdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
