@@ -1,10 +1,40 @@
 {
   "project_info": {
     "project_number": "195986792612",
+    "firebase_url": "https://attendance-system-ffb93-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "attendance-system-ffb93",
     "storage_bucket": "attendance-system-ffb93.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195986792612:android:cc5b55111baf0b72e4c631",
+        "android_client_info": {
+          "package_name": "com.femi.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195986792612-6kj1o81icbqcj6626de81vob8rvqmrdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB70JzD13omJqzqBtd-k0xFdV-Du3eutpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195986792612-6kj1o81icbqcj6626de81vob8rvqmrdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:195986792612:android:110be82fde52d273e4c631",

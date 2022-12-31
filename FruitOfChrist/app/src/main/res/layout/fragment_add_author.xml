@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingVertical="10dp"
+    tools:context=".fragments.AddAuthorFragment">
+
+    <TextView
+        android:id="@+id/prompt"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_new_author"
+        android:textAlignment="center"
+        android:textFontWeight="700"
+        android:textSize="20sp"
+        tools:targetApi="p" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/authorET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addBn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"/>
+
+</LinearLayout>

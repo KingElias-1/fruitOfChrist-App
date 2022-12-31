@@ -5,4 +5,10 @@
 
     <string name="signup_prompt">Don\'t have an account? <b>Sign Up</b></string>
     <string name="login_prompt">Already have an account? <b>Login</b></string>
+    <string name="add">Add</string>
+    <string name="add_new_author">Add New Author</string>
+    <string name="auth_empty_error">Please enter the author\'s name</string>
+    <string name="sucess">Author added Successful</string>
+    <string name="fail">Error adding Author</string>
+    <string name="add_author">Add Author</string>
 </resources>

@@ -37,7 +37,8 @@
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.FruitOfChrist.NoAppBar">
 
             <meta-data
                 android:name="android.app.lib_name"
