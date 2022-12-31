@@ -1,6 +1,5 @@
 package com.kingelias.fruitofchrist.viewmodel
 
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -25,7 +24,6 @@ class AuthorsVM(): ViewModel(){
         get() = _result
 
     fun addAuthor(author: Author, fragment: Fragment){
-        val dbAuthors = FirebaseDatabase.getInstance().getReference(NODE_AUTHORS)
         author.id = dbAuthors.push().key
 
         dbAuthors.child(author.id!!).setValue(author)
