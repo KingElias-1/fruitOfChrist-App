@@ -1,12 +1,11 @@
-package com.kingelias.fruitofchrist.activities
+package com.kingelias.fruitofchrist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kingelias.fruitofchrist.R
 
-class AuthActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        setContentView(R.layout.activity_main)
     }
 }
