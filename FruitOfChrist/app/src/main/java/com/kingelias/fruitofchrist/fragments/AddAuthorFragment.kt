@@ -48,7 +48,7 @@ class AddAuthorFragment : DialogFragment() {
             }else{
                 val author = Author()
                 author.name = name
-                authorsVM.addAuthor(author, this@AddAuthorFragment)
+                authorsVM.addAuthor(author)
 
                 findNavController().navigate(AddAuthorFragmentDirections.actionAddAuthorFragmentToAuthorsFragment())
             }

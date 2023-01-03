@@ -39,14 +39,17 @@ class AuthorsFragment : Fragment() {
 
         //calling function from viewModel to get authors
         authorsVM.fetchAuthors()
+        //getting real time updates when a new author is added
+        authorsVM.getRealTimeUpdates()
 
         //observing the data from the server to update the UI
         authorsVM.authors.observe(viewLifecycleOwner, Observer{
             authorsAdapter.setAuthors(it)
         })
+
+        authorsVM.author.observe(viewLifecycleOwner, Observer{
+            authorsAdapter.addAuthor(it)
+        })
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
 }
