@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.kingelias.fruitofchrist.R
 import com.kingelias.fruitofchrist.databinding.ActivityMainBinding

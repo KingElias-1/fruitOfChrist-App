@@ -11,4 +11,10 @@
     <string name="sucess">Author added Successful</string>
     <string name="fail">Error adding Author</string>
     <string name="add_author">Add Author</string>
+    <string name="save">Save</string>
+    <string name="edit_prompt">Edit Author</string>
+    <string name="confirm_delete">Are you sure you want to delete this Author?</string>
+    <string name="delete_author">Delete Author?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">cancel</string>
 </resources>
