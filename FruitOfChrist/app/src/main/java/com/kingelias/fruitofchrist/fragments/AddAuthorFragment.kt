@@ -10,6 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.kingelias.fruitofchrist.R
 import com.kingelias.fruitofchrist.viewmodel.AuthorsVM
 import com.kingelias.fruitofchrist.data.Author
@@ -20,6 +21,7 @@ class AddAuthorFragment : DialogFragment() {
     private val authorsVM by lazy {
         ViewModelProvider(this)[AuthorsVM::class.java]
     }
+    var editedAuthor: Author? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,11 +29,21 @@ class AddAuthorFragment : DialogFragment() {
         ): View? {
             addBinding = FragmentAddAuthorBinding.inflate(layoutInflater, container, false)
             return addBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val args: AddAuthorFragmentArgs by navArgs()
+
+        editedAuthor = args.editedAuthor
+
+        addBinding.authorET.setText(editedAuthor?.name)
+        if (editedAuthor != null){
+            addBinding.prompt.text = getString(R.string.edit_prompt)
+            addBinding.addBn.text = getString(R.string.save)
         }
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
-            authorsVM.result.observe(viewLifecycleOwner, Observer {
+        authorsVM.result.observe(viewLifecycleOwner, Observer {
             val message = if (it == null){
                 getString(R.string.sucess)
             }else{
@@ -41,17 +53,31 @@ class AddAuthorFragment : DialogFragment() {
         })
 
         addBinding.addBn.setOnClickListener {
-            val name = addBinding.authorET.text.toString()
+            if (editedAuthor == null){
+                val name = addBinding.authorET.text.toString().trim()
 
-            if(name.isEmpty()){
-                addBinding.authorET.error = getString(R.string.auth_empty_error)
+                if(name.isEmpty()){
+                    addBinding.authorET.error = getString(R.string.auth_empty_error)
+                }else{
+                    val author = Author()
+                    author.name = name
+                    authorsVM.addAuthor(author)
+
+                    findNavController().navigate(AddAuthorFragmentDirections.actionAddAuthorFragmentToAuthorsFragment())
+                }
             }else{
-                val author = Author()
-                author.name = name
-                authorsVM.addAuthor(author)
+                val name = addBinding.authorET.text.toString().trim()
 
-                findNavController().navigate(AddAuthorFragmentDirections.actionAddAuthorFragmentToAuthorsFragment())
+                if(name.isEmpty()){
+                    addBinding.authorET.error = getString(R.string.auth_empty_error)
+                }else{
+                    editedAuthor?.name = name
+                    authorsVM.updateAuthor(editedAuthor!!)
+
+                    findNavController().navigate(AddAuthorFragmentDirections.actionAddAuthorFragmentToAuthorsFragment())
+                }
             }
+
 
         }
 
