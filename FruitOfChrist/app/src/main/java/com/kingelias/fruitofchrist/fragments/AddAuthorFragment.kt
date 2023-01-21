@@ -29,21 +29,21 @@ class AddAuthorFragment : DialogFragment() {
         ): View? {
             addBinding = FragmentAddAuthorBinding.inflate(layoutInflater, container, false)
             return addBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val args: AddAuthorFragmentArgs by navArgs()
+
+        editedAuthor = args.editedAuthor
+
+        addBinding.authorET.setText(editedAuthor?.name)
+        if (editedAuthor != null){
+            addBinding.prompt.text = getString(R.string.edit_prompt)
+            addBinding.addBn.text = getString(R.string.save)
         }
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
-            val args: AddAuthorFragmentArgs by navArgs()
-
-            editedAuthor = args.editedAuthor
-
-            addBinding.authorET.setText(editedAuthor?.name)
-            if (editedAuthor != null){
-                addBinding.prompt.text = getString(R.string.edit_prompt)
-                addBinding.addBn.text = getString(R.string.save)
-            }
-
-            authorsVM.result.observe(viewLifecycleOwner, Observer {
+        authorsVM.result.observe(viewLifecycleOwner, Observer {
             val message = if (it == null){
                 getString(R.string.sucess)
             }else{
